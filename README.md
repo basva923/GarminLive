@@ -4,11 +4,20 @@ This is NOT an application provided by Garmin.
 
 This application shows live activity stats on your phone during a Ride.
 
-Requirements:
-- Garmin connect on phone
-- Garmin device with connectiq
-- Application installed on Garmin device
-- Connection between phone and Garmin device
+
+## Requirements
+- Garmin Connect installed on your phone
+- This application is installed on your phone
+- PhoneActivity is installed on your Garmin device: [Github PhoneActivity](https://github.com/basva923/PhoneAcitvity)
+
+## Documentation
+To show your activity on your phone:
+1. Connect your Garmin device to your phone.
+2. Open the PhoneActivity app on your Garmin device.
+3. Wait for a GPS signal (shown on top).
+4. Open the GarminLive app on your phone.
+5. Press start to begin your activity.
+
 
 ## Build instructions
 The easiest way to contribute/build/try with the code is to import it into android studio.
@@ -19,3 +28,7 @@ The easiest way to contribute/build/try with the code is to import it into andro
 <img alt="The map with current location and track" src="screenshots/map.png" width="200px">
 <img alt="The settings with mass, FTP, FTP heart rate, bike settings and road type" src="screenshots/settings.png" width="200px">
 <img alt="The larger overview of some fields" src="screenshots/all_fields.png" width="200px">
+
+
+## Limitations
+- The only activity type that is supported is Cycling.
