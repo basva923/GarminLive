@@ -6,7 +6,7 @@ This application shows live activity stats on your phone during a Ride.
 
 
 ## Requirements
-- Garmin Connect installed on your phone
+- Garmin Connect is installed on your phone
 - This application is installed on your phone
 - PhoneActivity is installed on your Garmin device: [Github PhoneActivity](https://github.com/basva923/PhoneAcitvity)
 
@@ -20,7 +20,7 @@ To show your activity on your phone:
 
 
 ## Build instructions
-The easiest way to contribute/build/try with the code is to import it into android studio.
+The easiest way to contribute/build/try with the code is to import this project into android studio.
 
 ## Some screenshots
 <img alt="Main screen with time, power, speed, heart rate and cadence" src="screenshots/large_overview.png" width="200px">
