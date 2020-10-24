@@ -2,8 +2,7 @@
 
 This is NOT an application provided by Garmin.
 
-This application shows live activity stats on your phone during a Ride.
-
+This application retrieves live activity data from your Garmin devices and shows it on the screen.
 
 ## Requirements
 - Garmin Connect is installed on your phone
@@ -29,6 +28,8 @@ The easiest way to contribute/build/try with the code is to import this project 
 <img alt="The settings with mass, FTP, FTP heart rate, bike settings and road type" src="screenshots/settings.png" width="200px">
 <img alt="The larger overview of some fields" src="screenshots/all_fields.png" width="200px">
 
+## Use Cases
+- Use an old phone as a head unit on your bike, it you have a Garmin watch.
 
 ## Limitations
 - The only activity type that is supported is Cycling.
