@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.DashboardFragment">
+
+    <TableLayout
+        android:id="@+id/dashboard_table"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="*"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <!--        <TableRow-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent" >-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView3"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Speed" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView4"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Distance" />-->
+        <!--        </TableRow>-->
+
+        <!--        <TableRow-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent">-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/detail_speed"-->
+        <!--                android:text="0 km/h"-->
+        <!--                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/detail_distance"-->
+        <!--                android:text="0km"-->
+        <!--                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />-->
+        <!--        </TableRow>-->
+
+        <!--        <TableRow-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent">-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/detail_heart_rate"-->
+        <!--                android:text="150 bpm"-->
+        <!--                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/detail_height"-->
+        <!--                android:text="1500m"-->
+        <!--                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />-->
+        <!--        </TableRow>-->
+
+        <!--        <TableRow-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent">-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/detail_lat"-->
+        <!--                android:text="51.313241"-->
+        <!--                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/detail_lon"-->
+        <!--                android:text="5.313241"-->
+        <!--                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />-->
+        <!--        </TableRow>-->
+
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

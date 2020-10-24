@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.github.basva923.garminphoneactivity.ui.map.MapFragment"
+        android:label="@string/title_map"
+        tools:layout="@layout/fragment_map" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.github.basva923.garminphoneactivity.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/navigation_dashboard2"
+        android:name="com.github.basva923.garminphoneactivity.ui.dashboard.SmallDashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_timer"
+        android:name="com.github.basva923.garminphoneactivity.ui.dashboard.TimerDashboardFragment"
+        android:label="@string/title_timer"
+        tools:layout="@layout/fragment_timer" />
+
+    <fragment
+        android:id="@+id/navigation_charts"
+        android:name="com.github.basva923.garminphoneactivity.ui.charts.ChartFragment"
+        android:label="@string/title_charts"
+        tools:layout="@layout/fragment_charts" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.github.basva923.garminphoneactivity.ui.settings.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>

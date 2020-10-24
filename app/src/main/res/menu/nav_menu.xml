@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_map"
+        android:title="@string/title_map" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_dashboard" />
+
+    <item
+        android:id="@+id/navigation_dashboard2"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_dashboard" />
+    <item
+        android:id="@+id/navigation_timer"
+        android:icon="@drawable/ic_baseline_timer_24"
+        android:title="@string/title_timer" />
+
+    <item
+        android:id="@+id/navigation_charts"
+        android:icon="@drawable/ic_baseline_show_chart_24"
+        android:title="@string/title_charts" />
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/title_settings" />
+
+</menu>
