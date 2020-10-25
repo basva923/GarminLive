@@ -2,8 +2,6 @@
 .idea
 keys/
 app/release
-!app/libs
-!app/libs/**
 
 app/src/main/res/values/developer-config.xml
 app/src/main/res/values/secrets.xml
