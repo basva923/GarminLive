@@ -4,6 +4,8 @@ This is NOT an application provided by Garmin.
 
 This application retrieves live activity data from your Garmin devices and shows it on the screen.
 
+An apk release build is available in the release assets.
+
 ## Requirements
 - Garmin Connect is installed on your phone
 - This application is installed on your phone
