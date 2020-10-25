@@ -5,6 +5,7 @@ app/release
 
 app/src/main/res/values/developer-config.xml
 app/src/main/res/values/secrets.xml
+!app/libs
 
 # Created by https://www.toptal.com/developers/gitignore/api/gradle,android,androidstudio,kotlin,java
 # Edit at https://www.toptal.com/developers/gitignore?templates=gradle,android,androidstudio,kotlin,java
