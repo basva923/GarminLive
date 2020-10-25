@@ -64,7 +64,7 @@ dependencies {
 
     implementation 'com.jjoe64:graphview:4.2.2'
 // https://mvnrepository.com/artifact/joda-time/joda-time
-    compile group: 'joda-time', name: 'joda-time', version: '2.10.6'
+    implementation group: 'joda-time', name: 'joda-time', version: '2.10.6'
 
     compile files('libs/connectiq.jar')
 
