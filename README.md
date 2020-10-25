@@ -1,4 +1,5 @@
 # Garmin Live Activity On Phone
+[![Actions Status](https://github.com/basva923/GarminLive/workflows/Android%20CI/badge.svg)](https://github.com/basva923/GarminLive/actions)
 
 This is NOT an application provided by Garmin.
 
