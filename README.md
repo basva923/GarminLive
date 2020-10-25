@@ -27,6 +27,7 @@ To show the mapbox map, create a free mapbox code, create a secrets.xml file in 
     <string name="mapbox_access_token">PASTE_YOUR_TOKEN_HERE</string>
 </resources>
 ```
+And create a secret access token to download the mapbox sdk, which is exampled here: [Mapbox Docs](https://docs.mapbox.com/android/maps/overview/#install-the-maps-sdk).
 
 To test the application without connecting to a Garmin device. Load the mock controller by commenting and uncommenting the corresponding line in the setupActivity function in [MainActivity.kt](app/src/main/java/com/github/basva923/garminphoneactivity/MainActivity.kt).
 
