@@ -10,6 +10,7 @@ import com.github.basva923.garminphoneactivity.controller.ActivityController
 import com.github.basva923.garminphoneactivity.controller.Controllers
 import com.github.basva923.garminphoneactivity.garmin.GarminActivityControl
 import com.github.basva923.garminphoneactivity.garmin.GarminConnection
+import com.github.basva923.garminphoneactivity.garmin.MockActivityControl
 import com.github.basva923.garminphoneactivity.model.Model
 import com.github.basva923.garminphoneactivity.settings.Settings
 import com.github.basva923.garminphoneactivity.ui.dashboard.DashboardFragment
@@ -27,15 +28,10 @@ class MainActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_live)
 
-//        val toolbar: Toolbar = findViewById(R.id.toolbar)
-//        setSupportActionBar(toolbar)
-
-        // Instantiate a ViewPager2 and a PagerAdapter.
         Settings.load(this)
 
         viewPager = findViewById(R.id.pager)
 
-        // The pager adapter, which provides the pages to the view pager widget.
         val pagerAdapter = ScreenSlidePagerAdapter(this)
         viewPager.adapter = pagerAdapter
 
@@ -50,18 +46,18 @@ class MainActivity : FragmentActivity() {
     private fun setupActivity() {
         if (Controllers.activityController == null)
 
-        //////////// COMMENT THIS /////////////////////////
+        //////////// GARMIN CONTROLLER /////////////////////////
             Controllers.activityController = ActivityController(
                 Model.track, GarminActivityControl(
                     GarminConnection(this)
                 )
             )
-        //////////// COMMENT THIS /////////////////////////
+        //////////// GARMIN CONTROLLER /////////////////////////
 
 
-        //////////// UNCOMMENT THIS /////////////////////////
+        //////////// MOCK CONTROLLER /////////////////////////
 //        Controllers.activityController = ActivityController(Model.track, MockActivityControl())
-        //////////// UNCOMMENT THIS /////////////////////////
+        //////////// MOCK CONTROLLER  /////////////////////////
     }
 
     override fun onPause() {

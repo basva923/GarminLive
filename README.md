@@ -21,6 +21,15 @@ To show your activity on your phone:
 ## Build instructions
 The easiest way to contribute/build/try with the code is to import this project into android studio.
 
+To show the mapbox map, create a free mapbox code, create a secrets.xml file in the [values](app/src/main/res/values) folder. And past in the following content:
+```xml
+<resources>
+    <string name="mapbox_access_token">PASTE_YOUR_TOKEN_HERE</string>
+</resources>
+```
+
+To test the application without connecting to a Garmin device. Load the mock controller by commenting and uncommenting the corresponding line in the setupActivity function in [MainActivity.kt](app/src/main/java/com/github/basva923/garminphoneactivity/MainActivity.kt).
+
 ## Some screenshots
 <img alt="Main screen with time, power, speed, heart rate and cadence" src="screenshots/large_overview.png" width="200px">
 <img alt="The simple overview, power, speed, heart rate and cadence" src="screenshots/simple_overview.png" width="200px">
@@ -33,3 +42,8 @@ The easiest way to contribute/build/try with the code is to import this project 
 
 ## Limitations
 - The only activity type that is supported is Cycling.
+
+
+git filter-branch --force --index-filter \
+  "git rm --cached --ignore-unmatch app/src/main/res/values/strings.xml" \
+  --prune-empty --tag-name-filter cat -- --all
