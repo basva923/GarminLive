@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">GarminLive</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_activity">Activity</string>
+    <string name="title_map">Map</string>
+    <string name="title_main_activity">GarmingLive</string>
+    <string name="title_charts">Charts</string>
+    <string name="title_settings">Settings</string>
+    <string name="total_mass">Total Mass</string>
+    <string name="cycling_position">Cycling Position</string>
+    <string name="track_surface">Track Surface</string>
+    <string name="title_timer">Timer</string>
+    <string name="FTP">FTP (Functional Threshold Power)</string>
+    <string name="ftp_heart_rate">FTP Heart Rate</string>
+</resources>

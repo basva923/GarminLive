@@ -42,8 +42,3 @@ To test the application without connecting to a Garmin device. Load the mock con
 
 ## Limitations
 - The only activity type that is supported is Cycling.
-
-
-git filter-branch --force --index-filter \
-  "git rm --cached --ignore-unmatch app/src/main/res/values/strings.xml" \
-  --prune-empty --tag-name-filter cat -- --all
