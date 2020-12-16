@@ -3,6 +3,7 @@ package com.github.basva923.garminphoneactivity.settings
 import android.content.Context
 import android.util.Log
 import com.github.basva923.garminphoneactivity.model.CyclingPosition
+import com.github.basva923.garminphoneactivity.model.PowerAlgorithm
 import com.github.basva923.garminphoneactivity.model.TrackSurface
 
 object Settings {
@@ -11,6 +12,8 @@ object Settings {
     var ftp = 300
     var ftpHeartRate = 180
     var totalMass = 85
+    var powerAlgorithm = PowerAlgorithm.REAL
+
 
     const val id = "Settings"
     const val TAG = "Settings"
@@ -23,6 +26,7 @@ object Settings {
             putInt("totalMass", totalMass)
             putInt("FTP", ftp)
             putInt("FTPHeartRate", ftpHeartRate)
+            putInt("powerAlgorithm", powerAlgorithm.ordinal)
             commit()
         }
         Log.d(TAG, "Saved settings")
@@ -36,6 +40,7 @@ object Settings {
         totalMass = prefs.getInt("totalMass", totalMass)
         ftp = prefs.getInt("FTP", ftp)
         ftpHeartRate = prefs.getInt("FTPHeartRate", ftpHeartRate)
+        powerAlgorithm = PowerAlgorithm.values()[prefs.getInt("powerAlgorithm", powerAlgorithm.ordinal)]
         Log.d(TAG, "Loaded settings")
     }
 }

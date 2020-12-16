@@ -14,6 +14,7 @@ import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import com.github.basva923.garminphoneactivity.R
 import com.github.basva923.garminphoneactivity.model.CyclingPosition
+import com.github.basva923.garminphoneactivity.model.PowerAlgorithm
 import com.github.basva923.garminphoneactivity.model.TrackSurface
 import com.github.basva923.garminphoneactivity.settings.Settings
 
@@ -24,6 +25,7 @@ class SettingsFragment : Fragment() {
     private val TAG = "SettingsFragment"
     private lateinit var _surfaceSpinner: Spinner
     private lateinit var _positionSpinner: Spinner
+    private lateinit var _powerAlgorithmSpinner: Spinner
     private lateinit var _root: View
 
     override fun onCreateView(
@@ -37,6 +39,7 @@ class SettingsFragment : Fragment() {
         setupMassText()
         setupPositionSpinner()
         setupSurfaceSpinner()
+        setupPowerAlgorithmSpinner()
 
         setupFTPText()
         setupFTPHeartRateText()
@@ -146,6 +149,27 @@ class SettingsFragment : Fragment() {
             CyclingPosition.values().map { it.name.toLowerCase().capitalize() })
         _positionSpinner.adapter = dataAdapter
         _positionSpinner.setSelection(CyclingPosition.values().indexOf(Settings.cyclingPosition))
+
+    }
+
+    private fun setupPowerAlgorithmSpinner() {
+        _powerAlgorithmSpinner = _root.findViewById(R.id.settings_powerAlgorithm)
+        _powerAlgorithmSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+            }
+
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, index: Int, p3: Long) {
+                Settings.powerAlgorithm = PowerAlgorithm.values()[index]
+                Log.d(TAG, "Selected ${Settings.powerAlgorithm.name}")
+            }
+
+        }
+        val dataAdapter = ArrayAdapter<String>(
+            requireContext(),
+            android.R.layout.simple_spinner_item,
+            PowerAlgorithm.values().map { it.name.toLowerCase().capitalize() })
+        _powerAlgorithmSpinner.adapter = dataAdapter
+        _powerAlgorithmSpinner.setSelection(PowerAlgorithm.values().indexOf(Settings.powerAlgorithm))
 
     }
 

@@ -1,7 +1,13 @@
 package com.github.basva923.garminphoneactivity.model
 
 import android.util.Log
+import com.github.basva923.garminphoneactivity.settings.Settings
 import kotlin.math.*
+
+enum class PowerAlgorithm {
+    REAL,
+    ELITE_TRAVEL_FLUID_YELLOW
+}
 
 class PowerCalculation {
     val GRAV_CONST = 9.81
@@ -14,6 +20,34 @@ class PowerCalculation {
         position: CyclingPosition,
         surface: TrackSurface,
         totalMass: Int,
+        bikeLoss: Double
+    ): Double {
+        when (Settings.powerAlgorithm) {
+            PowerAlgorithm.REAL -> {
+                return calcRealPower(track, surface, totalMass, position, bikeLoss)
+            }
+            PowerAlgorithm.ELITE_TRAVEL_FLUID_YELLOW -> {
+                if (track.samples.size < 1)
+                    return 0.0
+                return calcEliteTravelFluidYellowPower(track.getLastSample()!!.speed)
+            }
+        }
+
+    }
+
+    private fun calcEliteTravelFluidYellowPower(speed: Double): Double {
+        val x = speed * 3.6
+        val a = 23 / 5500;
+        val b = -203 / 1100
+        val c = 105 / 22
+        return a * x * x * x + b * x * x + c * x
+    }
+
+    private fun calcRealPower(
+        track: Track,
+        surface: TrackSurface,
+        totalMass: Int,
+        position: CyclingPosition,
         bikeLoss: Double
     ): Double {
         val trackSize = track.samples.size
