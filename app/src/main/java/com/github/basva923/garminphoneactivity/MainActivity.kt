@@ -47,16 +47,16 @@ class MainActivity : FragmentActivity() {
         if (Controllers.activityController == null)
 
         //////////// GARMIN CONTROLLER /////////////////////////
-            Controllers.activityController = ActivityController(
-                Model.track, GarminActivityControl(
-                    GarminConnection(this)
-                )
-            )
+//            Controllers.activityController = ActivityController(
+//                Model.track, GarminActivityControl(
+//                    GarminConnection(this)
+//                )
+//            )
         //////////// GARMIN CONTROLLER /////////////////////////
 
 
         //////////// MOCK CONTROLLER /////////////////////////
-//        Controllers.activityController = ActivityController(Model.track, MockActivityControl())
+        Controllers.activityController = ActivityController(Model.track, MockActivityControl())
         //////////// MOCK CONTROLLER  /////////////////////////
     }
 

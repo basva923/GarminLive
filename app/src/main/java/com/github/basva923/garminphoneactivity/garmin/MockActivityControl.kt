@@ -5113,12 +5113,14 @@ class MockActivityControl : ActivityControl() {
                 val sample = TrackSample(
                     i * 1000,
                     speeds[i % speeds.size],
+                    270.0,
                     heartRate[i % heartRate.size],
                     locations[i % locations.size][0],
                     locations[i % locations.size][1],
                     distance[i % distance.size],
                     altitude[i % altitude.size],
-                    cadences[i % cadences.size]
+                    cadences[i % cadences.size],
+
                 )
                 notifyNewSample(sample)
                 Log.d(TAG, sample.toString())

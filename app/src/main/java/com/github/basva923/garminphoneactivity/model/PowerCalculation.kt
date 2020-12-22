@@ -6,7 +6,8 @@ import kotlin.math.*
 
 enum class PowerAlgorithm {
     REAL,
-    ELITE_TRAVEL_FLUID_YELLOW
+    ELITE_TRAVEL_FLUID_YELLOW,
+    GARMIN
 }
 
 class PowerCalculation {
@@ -27,23 +28,49 @@ class PowerCalculation {
                 return calcRealPower(track, surface, totalMass, position, bikeLoss)
             }
             PowerAlgorithm.ELITE_TRAVEL_FLUID_YELLOW -> {
+                return calcEliteTravelFluidYellowPower(
+                    track,
+                    bikeLoss
+                )
+            }
+            PowerAlgorithm.GARMIN -> {
                 if (track.samples.size < 1)
                     return 0.0
-                return calcEliteTravelFluidYellowPower(track.getLastSample()!!.speed)
+                return track.getLastSample()!!.power
             }
         }
 
     }
 
-    private fun calcEliteTravelFluidYellowPower(speed: Double): Double {
-        val x = speed * 3.6
-        val a = 23 / 5500;
-        val b = -203 / 1100
-        val c = 105 / 22
-        return a * x * x * x + b * x * x + c * x
+    fun calcEliteTravelFluidYellowPower(
+        track: Track,
+        bikeLoss: Double
+    ): Double {
+        val trackSize = track.samples.size
+        if (trackSize < 10)
+            return 0.0
+
+        val smoothedCurrentSpeed =
+            track.samples.subList(trackSize - 5, trackSize).sumByDouble { it.speed } / 5
+
+        val airDensity = 1.225 * exp(-0.00011856 * 0)
+
+        val rollingPower = TrackSurface.ASPHALT.rollCoefficient * 80 * GRAV_CONST * 1
+        val windPower =
+            0.5 * airDensity * smoothedCurrentSpeed * smoothedCurrentSpeed * CyclingPosition.DROPS.aeroCoefficient
+        val power =
+            (rollingPower + windPower) * smoothedCurrentSpeed / (1 - bikeLoss)
+
+        val lastSample = track.getLastSample()!!
+        if (lastSample.cadence != null && lastSample.cadence < 30)
+            return 0.0
+        if (power < 0)
+            return 0.0
+
+        return power
     }
 
-    private fun calcRealPower(
+    fun calcRealPower(
         track: Track,
         surface: TrackSurface,
         totalMass: Int,
@@ -173,4 +200,9 @@ class PowerCalculation {
         }
         return track.samples[start].millisSinceStart / 1000
     }
+}
+
+fun main() {
+//    println(PowerCalculation().calcEliteTravelFluidYellowPower(16.6))
+//    println(PowerCalculation().calcEliteTravelFluidYellowPower(15.279))
 }
